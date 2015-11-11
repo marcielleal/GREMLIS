@@ -27,5 +27,12 @@ class StoragePool{
 		 * a libera para uso posterior pelo GM.
 		 */
 		virtual void Free (void * _ptr) = 0;
+		/**
+		 * Caso o bloco esteja vazio é impresso: | |
+		 * Caso o bloco esteja ocupado é impresso: |*|
+         * @brief Imprime uma representação textual do gerenciador de memória
+         * @see Allocate
+         */
+		virtual void MemoryMap(void)=0;
 };
 #endif

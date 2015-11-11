@@ -7,7 +7,7 @@
  *
  */
 #include <iostream>
-#include "StoragePool.hpp"
+#include "../include/StoragePool.hpp"
 
 #ifndef MEMPOOL_COMMON
 #define MEMPOOL_COMMON

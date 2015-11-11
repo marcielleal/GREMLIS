@@ -4,7 +4,7 @@
  *
  * @author Marciel Manoel Leal
  */
-#include "Event.hpp"
+#include "../include/Event.hpp"
 #include <iostream>
 
 Event::Event(void* _ptr,std::time_t _time){

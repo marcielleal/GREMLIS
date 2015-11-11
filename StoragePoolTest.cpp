@@ -1,13 +1,12 @@
 #include <ctime>
 #include <queue>
 #include <iostream>
-#include "SLPool.cpp"
-#include "Event.cpp"
-#include "Random.cpp"
+#include "./src/SLPoolBF.cpp"
+#include "./src/Event.cpp"
+#include "./src/Random.cpp"
 #include <cstddef>      //nullptr
 
-#include "mempool_common.cpp"
-
+#include "./src/mempool_common.cpp"
 
 void StoragePoolTest(std::time_t _timeLimit,StoragePool *_pool=nullptr){
     Random ran;
@@ -49,7 +48,6 @@ void StoragePoolTest(std::time_t _timeLimit,StoragePool *_pool=nullptr){
 }
 #include <ratio>
 #include <chrono>
-#include <unistd.h>
 
 int main (){
     using namespace std::chrono;

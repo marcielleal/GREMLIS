@@ -1,5 +1,4 @@
-
-#include "SLPool.hpp"
+#include "../include/SLPool.hpp"
 #include <new>
 
 SLPool::SLPool(size_t _bytes){
@@ -48,8 +47,7 @@ void SLPool::Free(void* _ptr){
     Block* ptReserved=reinterpret_cast <Block*>(reinterpret_cast <int*>(_ptr)-1U);
     Block* ptPost=this->mr_Sentinel.mp_Next;
     Block* ptPrev=&this->mr_Sentinel;
-    int i=0;
-    bool nFound=true;
+
     while(ptPost!=nullptr){
         if(ptPost>ptReserved){
             if(((ptPrev+ptPrev->mui_Length)==ptReserved)&&((ptReserved+ptReserved->mui_Length)==ptPost)){

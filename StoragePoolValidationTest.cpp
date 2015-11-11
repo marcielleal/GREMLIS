@@ -1,15 +1,12 @@
-#include <ctime>
-#include <queue>
-#include <iostream>
-#include "SLPool.cpp"
-#include "Event.cpp"
-#include "Random.cpp"
 #include <cstddef>      //nullptr
+#include <iostream>
+#include "./include/StoragePool.hpp"
+#include "./include/SLPool.hpp"
+#include "./src/SLPoolBF.cpp"
 
-#include "mempool_common.cpp"
+#include "./src/mempool_common.cpp"
 
-
-void StoragePoolValidationTest(StoragePool &p){
+void StoragePoolValidationTest(StoragePool &p){   
     int* f;
     int* f1;
     int* f2;
@@ -61,9 +58,7 @@ void StoragePoolValidationTest(StoragePool &p){
     delete f7;
     std::cout<<"#####Liberação da quarta alocação(47 inteiros). Área livre à direita######"<<std::endl;
     p.MemoryMap();
-    std::cout<<p<<std::endl;
     delete f5;
     std::cout<<"#####Liberação da quarta alocação(5 inteiros). Área livre à esquerda e à direita######"<<std::endl;
     p.MemoryMap();
-    return 0;
 }

@@ -1,4 +1,4 @@
-#include "SLPoolBF.hpp"
+#include "../include/SLPoolBF.hpp"
 #include "SLPool.cpp"
 void* SLPoolBF::Allocate(size_t _bytes){
     size_t num=((_bytes+sizeof(Header))/sizeof(Block)) + ((_bytes+sizeof(Header))%sizeof(Block)!=0);
@@ -29,8 +29,4 @@ void* SLPoolBF::Allocate(size_t _bytes){
             this->mr_Sentinel.mp_Next=tmp->mp_Next;
     }
     return reinterpret_cast<void*>(reinterpret_cast<int*>(tmp)+1U);
-}
-int main(void){
-    StoragePool *s=new SLPoolBF(1024);
-    int *p=new (s) int;
 }
